@@ -5,7 +5,7 @@ import static groovyx.net.http.ContentType.*
 
 def db = "tonydt_test"
 def table = "rnr_test"
-def record = "r3"
+def record = "r4"
 
 setRecord(
         db,
@@ -14,8 +14,12 @@ setRecord(
         [
                 fields: [
                         [
-                                name : "ff3",
-                                value: 1
+                                name : "price",
+                                value: 1000
+                        ],
+                        [
+                            name: "title",
+                            value: "FF7"
                         ]
                 ]
         ])
@@ -27,21 +31,12 @@ setRecord(
         [
                 fields: [
                         [
-                                name     : "ff3",
-                                increment: 3
-                        ]
-                ]
-        ])
-
-setRecord(
-        db,
-        table,
-        record,
-        [
-                fields: [
+                                name     : "price",
+                                increment: -100
+                        ],
                         [
-                                name     : "ff3",
-                                increment: -1
+                            name: "title",
+                            value: "FF6"
                         ]
                 ]
         ])
@@ -127,4 +122,3 @@ private void deleteRecord(host, db, table, record) {
         error_log(e)
     }
 }
-
